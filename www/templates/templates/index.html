@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>自由学习</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    #return-div {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    p {
+      font-family: Microsoft Yahei;
+      font-size: 24px;
+      text-align: center;
+      width: 700px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1> </h1>
+  <div class="image-container">
+    <img src="{{ url_for('static', filename='intro.png', _relative_url='/var/www/html/python2web') }}" alt="NumPy Logo">
+    <p>请选择想学习的题目类型，并输入想学习的题号（1~6000）:</p>
+  </div>
+  <form action="{{ url_for('plot') }}" method="post">
+    <select name="configuration" id="configuration" class="text">
+      <option>简单型</option>
+      <option>2x2网格型</option>
+      <option>3x3网格型</option>
+      <option>左右型</option>
+      <option>上下型</option>
+      <option>里外型</option>
+      <option>内网格型</option>
+    </select>
+    <input type="text" name="filename" id="filename" class="text">
+    <button type="submit" class="button">查看题目</button>
+  </form>
+</body>
+
+</html>
